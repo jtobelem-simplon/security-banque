@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+<title>Banque Database</title>
+<meta name = "author" content = "Josselin Tobelem" >
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css" />
+</head>
+
+<body>
+
+	<div class="container">
+		<header>
+			<h1>Banque Database</h1>
+		</header>
+		<section id="sectionTitulaire" class="row" style="min-height: 500px">
+
+
+
+			<article class="col col-auto" id="titulaireDetail">
+
+
+				<form class="form-horizontal" id="titulaire-form">
+					<div class="form-group">
+						<label for="id">id</label> <input type="number"
+							class="form-control" placeholder="enter the id" id="id">
+					</div>
+
+					<div class="form-group">
+						<label for="name">name</label> <input type="text"
+							class="form-control" placeholder="enter the name" id="name">
+					</div>
+
+					<div class="form-group">
+							<select id="compteList" class="form-control"
+								name="comptes" size="1">
+								
+							</select>
+					</div>
+				</form>
+
+
+				<div class="form-group">
+
+					<div class="btn-group" role="group" aria-label="session">
+						<form th:action="@{/logout}" method="post">
+							<button id="btn-logout" class="btn btn-danger">logout</button>
+						</form>
+					</div>
+				</div>
+			</article>
+
+
+			<article class="col col-md-auto" id="operationList">
+				<table id="operationTable" class="cell-border">
+					<thead>
+						<tr>
+							<th>numero</th>
+							<th>montant</th>
+							<th>date</th>
+							<th>libelle</th>
+							<th>type</th>
+						</tr>
+					</thead>
+				</table>
+			</article>
+		</section>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<!-- 
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+ -->
+	<script type="text/javascript" src="js/list.js"></script>
+</body>
+</html>
